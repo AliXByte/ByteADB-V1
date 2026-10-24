@@ -108,6 +108,43 @@ def kill_server():
     _run(['kill-server'])
 
 
+def restart_server():
+    kill_server()
+    start_server()
+
+
+def forward(serial: str, local: str, remote: str) -> str:
+    """`adb forward <local> <remote>`, e.g. forward('emulator-5554', 'tcp:8080', 'tcp:8080')."""
+    proc = _run(['-s', serial, 'forward', local, remote], timeout=10)
+    return proc.stdout.decode('utf-8', 'replace').strip()
+
+
+def reverse(serial: str, remote: str, local: str) -> str:
+    """`adb reverse <remote> <local>` — exposes a port on the computer to the device."""
+    proc = _run(['-s', serial, 'reverse', remote, local], timeout=10)
+    return proc.stdout.decode('utf-8', 'replace').strip()
+
+
+def forward_list() -> list[tuple[str, str, str]]:
+    """Every active forward rule across all devices, as (serial, local, remote)."""
+    proc = _run(['forward', '--list'], timeout=10)
+    out = proc.stdout.decode('utf-8', 'replace')
+    rules = []
+    for line in out.splitlines():
+        parts = line.split()
+        if len(parts) == 3:
+            rules.append((parts[0], parts[1], parts[2]))
+    return rules
+
+
+def forward_remove(serial: str, local: str):
+    _run(['-s', serial, 'forward', '--remove', local], timeout=10)
+
+
+def forward_remove_all(serial: str):
+    _run(['-s', serial, 'forward', '--remove-all'], timeout=10)
+
+
 def pair(host_port: str, pairing_code: str) -> str:
     """Android 11+ wireless-debugging pairing: `adb pair <ip:port> <code>`.
     host_port is the pairing service's ip:port shown on the phone's

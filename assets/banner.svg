@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="280" rx="16" fill="url(#bg)"/>
+  <rect x="0" y="0" width="900" height="3" fill="url(#accent)"/>
+  <!-- Terminal icon -->
+  <rect x="60" y="75" width="130" height="130" rx="18" fill="#1a1f2b" stroke="#30363d" stroke-width="1.5"/>
+  <text x="95" y="155" font-family="monospace" font-size="60" fill="url(#accent)" filter="url(#glow)">$_</text>
+  <!-- Android bot outline -->
+  <g transform="translate(735, 85)" fill="none" stroke="#3fb950" stroke-width="2.5" opacity="0.7">
+    <path d="M0,50 Q0,20 30,20 L70,20 Q100,20 100,50 L100,90 Q100,110 80,110 L20,110 Q0,110 0,90 Z"/>
+    <circle cx="35" cy="55" r="5" fill="#3fb950"/>
+    <circle cx="65" cy="55" r="5" fill="#3fb950"/>
+    <line x1="25" y1="10" x2="35" y2="20"/>
+    <line x1="75" y1="10" x2="65" y2="20"/>
+    <line x1="-12" y1="45" x2="-12" y2="85" stroke-linecap="round" stroke-width="8"/>
+    <line x1="112" y1="45" x2="112" y2="85" stroke-linecap="round" stroke-width="8"/>
+    <line x1="30" y1="115" x2="30" y2="145" stroke-linecap="round" stroke-width="8"/>
+    <line x1="70" y1="115" x2="70" y2="145" stroke-linecap="round" stroke-width="8"/>
+  </g>
+  <!-- Title -->
+  <text x="230" y="130" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-weight="800" font-size="72" fill="#e6edf3" letter-spacing="-2">Byte<tspan fill="url(#accent)">ADB</tspan></text>
+  <!-- Subtitle -->
+  <text x="233" y="170" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-weight="400" font-size="18" fill="#8b949e">Professional ADB Control Toolkit</text>
+  <!-- Tags -->
+  <g transform="translate(233, 195)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="monospace" font-size="11" fill="#00d4ff">CLI</text>
+    <rect x="70" y="0" width="80" height="24" rx="12" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+    <text x="110" y="16" text-anchor="middle" font-family="monospace" font-size="11" fill="#00d4ff">Python</text>
+    <rect x="160" y="0" width="95" height="24" rx="12" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+    <text x="207" y="16" text-anchor="middle" font-family="monospace" font-size="11" fill="#00d4ff">Android</text>
+    <rect x="265" y="0" width="75" height="24" rx="12" fill="#1f2937" stroke="#30363d" stroke-width="1"/>
+    <text x="302" y="16" text-anchor="middle" font-family="monospace" font-size="11" fill="#3fb950">v1.0.0</text>
+  </g>
+  <!-- Bottom line -->
+  <rect x="0" y="277" width="900" height="3" fill="url(#accent)"/>
+</svg>

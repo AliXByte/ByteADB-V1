@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="400" rx="12" fill="url(#fbg)"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-weight="700" font-size="22" fill="#e6edf3">Feature Overview</text>
+  <rect x="350" y="50" width="200" height="2" rx="1" fill="#30363d"/>
+
+  <!-- Row 1 -->
+  <g transform="translate(30, 75)">
+    <!-- Card 1 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#7aa2f7">📱</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">Device Management</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">Connect, list, info, reboot, wireless</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">debugging, multi-device support,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">USB &amp; TCP/IP, pairing codes</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">6 modules</text>
+  </g>
+  <g transform="translate(320, 75)">
+    <!-- Card 2 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#bb9af7">🖥️</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">Screen &amp; Media</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">Screenshot, record, live mirror,</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">camera stream, mic/audio capture,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">virtual display, OTG mode</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">3 modules</text>
+  </g>
+  <g transform="translate(610, 75)">
+    <!-- Card 3 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#e0af68">📦</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">App Management</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">Install, uninstall, permissions,</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">backup/restore, split APKs,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">intents, deep links, components</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">2 modules</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(30, 225)">
+    <!-- Card 4 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#f7768e">🔧</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">System &amp; Security</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">Processes, services, CPU/memory,</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">SELinux, bugreport, thermal,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">properties, security audit</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">3 modules</text>
+  </g>
+  <g transform="translate(320, 225)">
+    <!-- Card 5 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#9ece6a">🌐</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">Network &amp; Comms</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">WiFi, IP config, LAN scan,</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">contacts, call log, notifications,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">port forwarding, TCP connections</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">3 modules</text>
+  </g>
+  <g transform="translate(610, 225)">
+    <!-- Card 6 -->
+    <rect width="260" height="130" rx="10" fill="#1a1f2b" stroke="#30363d" stroke-width="1"/>
+    <text x="20" y="35" font-family="monospace" font-size="24" fill="#00d4ff">⚡</text>
+    <text x="55" y="35" font-family="'Segoe UI',sans-serif" font-weight="600" font-size="15" fill="#e6edf3">Control &amp; Input</text>
+    <text x="20" y="60" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">Tap, swipe, text, keyevents,</text>
+    <text x="20" y="80" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">display settings, sound, location,</text>
+    <text x="20" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#8b949e">radios, battery simulation</text>
+    <text x="20" y="120" font-family="monospace" font-size="11" fill="#3fb950">3 modules</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <text x="450" y="385" text-anchor="middle" font-family="monospace" font-size="13" fill="#565f89">20 core modules · 21 menu sections · 150+ commands</text>
+</svg>

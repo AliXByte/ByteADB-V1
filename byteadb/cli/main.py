@@ -20,15 +20,22 @@ def cli(ctx):
     """ByteADB — full-control ADB toolkit (devices, files, apps, shell,
     logcat, screen, control, settings, wireless), by AliXByte.
 
-    Run with no command to launch the interactive dashboard (TUI)."""
+    Run with no command to launch the interactive numbered menu."""
     if ctx.invoked_subcommand is None:
-        from byteadb.tui.app import run_tui
-        run_tui()
+        from byteadb.cli.menu import run_menu
+        run_menu()
+
+
+@cli.command('menu')
+def menu_cmd():
+    """Launch the interactive numbered main menu (same as running with no command)."""
+    from byteadb.cli.menu import run_menu
+    run_menu()
 
 
 @cli.command('tui')
 def tui_cmd():
-    """Launch the full-screen interactive dashboard."""
+    """Launch the alternate full-screen panel dashboard (Textual)."""
     from byteadb.tui.app import run_tui
     run_tui()
 

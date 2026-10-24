@@ -99,6 +99,23 @@ def pull_file(device: AdbDevice, remote_path: str, local_path: str) -> str:
     return device.pull(remote_path, local_path)
 
 
+WELL_KNOWN_PATHS = {
+    'whatsapp': '/sdcard/Android/media/com.whatsapp/WhatsApp',
+    'whatsapp_legacy': '/sdcard/WhatsApp',
+    'screenshots': '/sdcard/Pictures/Screenshots',
+    'camera': '/sdcard/DCIM/Camera',
+}
+
+
+def pull_dir(device: AdbDevice, remote_dir: str, local_dir: str) -> str:
+    """`adb pull` is recursive for directories by default, so copying a
+    whole folder category (WhatsApp media, screenshots, camera photos)
+    is just a plain pull of its known path."""
+    import os
+    os.makedirs(local_dir, exist_ok=True)
+    return device.pull(remote_dir, local_dir, timeout=600.0)
+
+
 def human_size(num: Optional[int]) -> str:
     if num is None:
         return '—'

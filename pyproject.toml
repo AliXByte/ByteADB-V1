@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/AliXByte/ByteADB"
+Homepage = "https://github.com/AliXByte/ByteADB-V1"
 
 [project.scripts]
 byteadb = "byteadb.cli.main:main"
