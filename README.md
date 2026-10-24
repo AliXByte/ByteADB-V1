@@ -1,42 +1,48 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="ByteADB Banner" width="100%">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00d4ff,100:7b61ff&height=220&section=header&text=ByteADB&fontSize=80&fontColor=e6edf3&fontAlignY=35&desc=Professional%20ADB%20Control%20Toolkit&descSize=20&descColor=8b949e&descAlignY=55&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <strong>Professional ADB Control Toolkit — a real terminal dashboard, not another thin wrapper script.</strong>
+  <a href="#">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=Full-control+ADB+toolkit+%E2%80%94+not+another+wrapper+script;20+core+modules+%C2%B7+21+menu+sections+%C2%B7+150%2B+commands;ROM+compatible+%E2%80%94+Xiaomi%2C+Samsung%2C+Pixel%2C+Huawei;Code.+Control.+Manage.+Repeat." alt="Typing SVG"/>
+  </a>
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-4fd1ff?style=flat-square">
-  <img alt="Python" src="https://img.shields.io/badge/python-3.9%2B-4fd1ff?style=flat-square">
-  <img alt="Platform" src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-4fd1ff?style=flat-square">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-4fd1ff?style=flat-square">
-  <img alt="Modules" src="https://img.shields.io/badge/modules-20-9ece6a?style=flat-square">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-00d4ff?style=for-the-badge&logo=semver&logoColor=white">
+  <img alt="Python" src="https://img.shields.io/badge/python-3.9+-3fb950?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-bb9af7?style=for-the-badge&logo=windowsterminal&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-e0af68?style=for-the-badge&logo=opensourceinitiative&logoColor=white">
+</p>
+
+<p align="center">
+  <img alt="Modules" src="https://img.shields.io/badge/core_modules-20-00d4ff?style=flat-square">
+  <img alt="Menu" src="https://img.shields.io/badge/menu_sections-21-3fb950?style=flat-square">
+  <img alt="Commands" src="https://img.shields.io/badge/commands-150+-bb9af7?style=flat-square">
+  <img alt="ROM" src="https://img.shields.io/badge/ROM-compatible-e0af68?style=flat-square">
 </p>
 
 ---
 
-Most ADB "helper" tools are either a single Python script with a handful of hardcoded commands, or a GUI app that hides what it's actually running. ByteADB is neither: it's a proper CLI for scripting, **and** a full-screen terminal dashboard for everything else — files, apps, logcat, shell, screen, input, settings, wireless — all built on the real `adb` binary, never a reimplementation of the protocol.
+<br>
 
-**V1 is CLI/TUI only, on purpose.** A web panel is planned as a separate V2 product rather than bolted onto this one — a terminal tool and a web app want different security models and different UX, so they're staying apart.
+> *Most ADB "helper" tools are either a single Python script with a handful of hardcoded commands, or a GUI app that hides what it's actually running. ByteADB is neither.*
+
+ByteADB is a proper CLI for scripting **and** a full-screen terminal dashboard for everything else — files, apps, logcat, shell, screen, input, settings, wireless — all built on the real `adb` binary, never a reimplementation of the protocol.
+
+**V1 is CLI/TUI only, on purpose.** A web panel is planned as a separate V2 product.
+
+<br>
+
+## 🖥️ Preview
 
 <p align="center">
   <img src="assets/menu-screenshot.svg" alt="ByteADB Main Menu" width="100%">
 </p>
 
-## Why not just use `adb` directly?
+<br>
 
-You still can — ByteADB never hides what it runs. What it adds:
-
-- **One consistent interface** instead of memorizing `pm`, `am`, `settings`, `dumpsys` flags for every task.
-- **A real dashboard** with a numbered interactive menu to browse files, manage apps, tail logs, and control your device without juggling five terminal tabs.
-- **Safe multi-device handling** — every command is pinned to one serial, so a second phone plugged in mid-session can't make you run something on the wrong device.
-- **Honest errors** — a failed command shows you the exact `adb` invocation and its real stderr, not a swallowed exception.
-- **ROM-compatible** — multi-fallback strategies for content providers that work on Xiaomi/MIUI, Samsung OneUI, Huawei EMUI, and stock Android alike.
-
-## Install
-
-No venv, no build step — clone it, install the three dependencies, run the file:
+## ⚡ Quick Install
 
 ```bash
 git clone https://github.com/AliXByte/ByteADB-V1.git
@@ -45,31 +51,48 @@ pip install -r requirements.txt
 python3 byteadb.py
 ```
 
-You'll also need the real [Android Platform Tools](https://developer.android.com/tools/releases/platform-tools) (`adb`) on your PATH — ByteADB drives it, it doesn't bundle it.
+> You'll also need [Android Platform Tools](https://developer.android.com/tools/releases/platform-tools) (`adb`) on your PATH.
 
-## Quick start
+<br>
 
-```bash
-python3 byteadb.py                       # no arguments -> launches the numbered menu
-python3 byteadb.py devices list          # see what's attached
-python3 byteadb.py devices info          # model, Android version, battery — auto-picks the only device
-python3 byteadb.py files ls /sdcard
-python3 byteadb.py apps list --user-only
-python3 byteadb.py logcat tail --level W
-python3 byteadb.py screen shot photo.png
-```
+## 🧠 Why ByteADB?
 
-(If you'd rather install it as a real `byteadb` command on your PATH, `pip install -e .` still works and every example above drops the `python3 byteadb.py` prefix in favor of just `byteadb`.)
+<table>
+<tr>
+<td width="50%">
 
-## Features
+### 🔧 One Interface
+Stop memorizing `pm`, `am`, `settings`, `dumpsys` flags — ByteADB wraps them all in a clean numbered menu.
+
+### 🛡️ Safe Multi-Device
+Every command is pinned to one serial. A second phone plugged in mid-session can't make you run something on the wrong device.
+
+</td>
+<td width="50%">
+
+### 💀 Honest Errors
+A failed command shows the exact `adb` invocation and its real stderr — not a swallowed exception.
+
+### 📱 ROM Compatible
+Multi-fallback strategies that work on Xiaomi/MIUI, Samsung OneUI, Huawei EMUI, and stock Android alike.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+## ⚔️ Features
 
 <p align="center">
   <img src="assets/features.svg" alt="ByteADB Features" width="100%">
 </p>
 
-## The dashboard
+<br>
 
-Running `byteadb` with no arguments (or `byteadb menu`) opens the interactive numbered dashboard — a banner, a numbered menu, pick a number, do the thing, back to the menu:
+## 📋 The Dashboard
+
+Running `byteadb` with no arguments opens the interactive numbered dashboard:
 
 ```
  1. Device Connection ›               12. Power, Reboot & Lock ›
@@ -85,77 +108,101 @@ Running `byteadb` with no arguments (or `byteadb menu`) opens the interactive nu
 11. Settings (get / put / list) ›
 
 99. Clear     0. Exit
-[Main Menu] >
 ```
 
-Every option is backed by a `byteadb.core` module — the menu is just a friendlier front door to the same logic the scriptable subcommands use.
+<br>
 
-## Command reference
+## 🚀 Usage
+
+```bash
+python3 byteadb.py                       # interactive menu
+python3 byteadb.py devices list          # list attached devices
+python3 byteadb.py devices info          # model, Android version, battery
+python3 byteadb.py files ls /sdcard      # browse device files
+python3 byteadb.py apps list --user-only # list installed apps
+python3 byteadb.py logcat tail --level W # live logcat with filter
+python3 byteadb.py screen shot photo.png # take screenshot
+```
+
+> Install as a command: `pip install -e .` → then use `byteadb` directly.
+
+<br>
+
+## 📦 Command Reference
 
 | Group | Commands |
-|---|---|
+|:---|:---|
 | `devices` | `list`, `info`, `reboot` |
 | `files` | `ls`, `mkdir`, `rm`, `mv`, `push`, `pull` |
 | `apps` | `list`, `info`, `install`, `uninstall`, `clear`, `force-stop`, `enable`, `disable`, `launch`, `grant`, `revoke` |
-| `shell` | run one command, or drop into an interactive shell with none |
+| `shell` | run one command, or drop into interactive shell |
 | `logcat` | `tail` (with `--level`/`--tag` filters), `clear` |
 | `screen` | `shot`, `record`, `mirror` (via scrcpy) |
 | `control` | `tap`, `swipe`, `text`, `key`, `reboot` |
 | `settings` | `get`, `put`, `list` (system/secure/global) |
 | `wireless` | `pair`, `connect`, `disconnect`, `enable-tcpip` |
 
-Every device-scoped command accepts `--serial/-s` to target a specific phone when more than one is attached; with exactly one attached, ByteADB picks it automatically.
+> Every device-scoped command accepts `--serial/-s` to target a specific phone.
 
-## Project structure
+<br>
+
+## 🏗️ Project Structure
 
 ```
 ByteADB/
 ├── byteadb.py              # entry point
 ├── byteadb/
-│   ├── core/               # pure logic — 20 modules, talks to `adb`, nothing else
-│   │   ├── adb.py            # process wrapper, device listing, AdbDevice
-│   │   ├── files.py          # ls/mkdir/rm/mv/push/pull
-│   │   ├── apps.py           # pm/am wrappers: install, uninstall, permissions, launch
-│   │   ├── logcat.py         # streaming logcat with level/tag filters
-│   │   ├── screen.py         # screenshot, screenrecord, scrcpy mirroring
-│   │   ├── control.py        # input tap/swipe/text/keyevent, reboot modes
-│   │   ├── settings.py       # settings get/put/list across namespaces
-│   │   ├── wireless.py       # pairing-code flow, tcpip mode
+│   ├── core/               # 20 modules — pure logic, talks to adb
+│   │   ├── adb.py            # process wrapper, device listing
+│   │   ├── apps.py           # install, uninstall, permissions, launch
 │   │   ├── communication.py  # contacts, call log, calendar, notifications
-│   │   ├── system.py         # processes, services, bugreport, properties
-│   │   ├── sysinfo.py        # cpu, memory, storage, thermal status
-│   │   ├── network.py        # wifi, IP, LAN scan, port forwarding
-│   │   ├── display.py        # brightness, resolution, density, rotation
-│   │   ├── media.py          # media files, open URLs
+│   │   ├── control.py        # tap, swipe, text, keyevent, reboot
+│   │   ├── display.py        # brightness, resolution, density
+│   │   ├── files.py          # ls, mkdir, rm, mv, push, pull
 │   │   ├── location.py       # GPS mock, geolocation
-│   │   ├── usage.py          # app usage stats, battery stats
-│   │   ├── radios.py         # airplane mode, wifi/bt/nfc toggle, battery mock
-│   │   ├── security.py       # security audit, SELinux, encryption status
+│   │   ├── logcat.py         # streaming logcat with filters
+│   │   ├── media.py          # media files, URLs
+│   │   ├── network.py        # wifi, IP, LAN scan, port forwarding
+│   │   ├── radios.py         # airplane, wifi/bt/nfc, battery mock
+│   │   ├── screen.py         # screenshot, record, scrcpy mirror
+│   │   ├── security.py       # security audit, SELinux
+│   │   ├── settings.py       # get/put/list across namespaces
 │   │   ├── sms.py            # SMS operations
-│   │   └── __init__.py
+│   │   ├── sysinfo.py        # cpu, memory, storage, thermal
+│   │   ├── system.py         # processes, services, bugreport
+│   │   ├── usage.py          # app usage, battery stats
+│   │   └── wireless.py       # pairing, tcpip mode
 │   ├── cli/
 │   │   ├── main.py           # Click CLI entry
-│   │   └── menu.py           # interactive numbered menu (2000+ lines)
+│   │   └── menu.py           # interactive menu (2000+ lines)
 │   └── tui/
 │       └── app.py            # Textual dashboard
-├── tests/                    # unit tests
+├── tests/
 ├── pyproject.toml
 ├── requirements.txt
 └── LICENSE
 ```
 
-## Live mirroring
+<br>
 
-Full mouse/keyboard screen control needs real-time video decode, which ByteADB deliberately doesn't reimplement. `byteadb screen mirror` shells out to [scrcpy](https://github.com/Genymobile/scrcpy) if it's installed — the same honest-integration approach as everything else here, with a clear error (and the install link) if it isn't.
+## 🔒 Security
 
-## Security notes
+ByteADB only does what `adb` itself can already do on an authorized, debugging-enabled device — it doesn't exploit anything, bypass Android's permission model, or talk to a phone that hasn't explicitly authorized this computer's RSA key.
 
-ByteADB only does what `adb` itself can already do on an authorized, debugging-enabled device — it doesn't exploit anything, bypass Android's permission model, or talk to a phone that hasn't explicitly authorized this computer's RSA key. Every destructive action (`rm`, `uninstall`, `clear`, `force-stop`, reboot into another mode) runs exactly when you ask for it, with the real command shown on failure.
+<br>
 
-## License
+## 📜 License
 
 Released under the [MIT License](LICENSE).
 
-## Credits
+<br>
 
-ByteADB is designed and built by **[AliXByte](https://github.com/AliXByte)**.
+---
+
+<p align="center">
+  <strong>Designed and built by <a href="https://github.com/AliXByte">AliXByte</a></strong>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00d4ff,100:7b61ff&height=120&section=footer&animation=fadeIn" width="100%"/>
+</p>
