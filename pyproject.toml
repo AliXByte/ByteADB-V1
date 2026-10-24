@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byteadb"
+version = "1.0.0"
+description = "A professional, all-in-one ADB control toolkit — CLI and terminal dashboard."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "AliXByte", url = "https://github.com/AliXByte" }]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.7",
+    "textual>=0.58",
+]
+
+[project.urls]
+Homepage = "https://github.com/AliXByte/ByteADB"
+
+[project.scripts]
+byteadb = "byteadb.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["byteadb*"]
